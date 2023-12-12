@@ -1,0 +1,972 @@
+{
+	"info": {
+		"_postman_id": "89e1aaee-d29e-498a-9300-e4b725a02c22",
+		"name": "phpassessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1282514"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Musadiq khan fd",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "musadiqkhan32344@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "123456789",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzAxODUwODU0LCJleHAiOjE3MDE4NTQ0NTQsIm5iZiI6MTcwMTg1MDg1NCwianRpIjoiTThrRXBCVDRlbW5kbXVxRSIsInN1YiI6IjExIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.dQ-84vn0AC7xNBgdnplnYTAAi7S3Kn86rRxgJTtqNWM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "musadiqkhan32344@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNjgwMjY3MjY0LCJleHAiOjE2ODAyNzA4NjQsIm5iZiI6MTY4MDI2NzI2NCwianRpIjoiMTJpRkl4U3VhR2RPVXBXbiIsInN1YiI6IjExIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.odfoOeW1WRWDn1LfyQYwrssExK6_-AFdgM2E9b3ulSw",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserInfo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiYzlkMzY1NzVkNDgzZTAzNWQxZjU0YTA2NmYwOTkyNGYwYWQ5ZDExYjA3MDc1ZDM0ODJmNTFiODgyZDFjNWJkZDY4ZmY2MDY3NDkzYzZjM2YiLCJpYXQiOjE2ODAxNjI5MTYuNzY2MjYxLCJuYmYiOjE2ODAxNjI5MTYuNzY2MjY1LCJleHAiOjE3MTE3ODUzMTYuNzYwNzE2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.TL8kCyYFux-qz0EGA9m1f5SvybL0A0B3-6QS2LRLb6f7CJF1zNtDKLvF2Jq_FkpHXQPHZqSJbjI4otM4Chjko_H55Zw42ZFmIevWbgfHms-vk7XaMJ9UYivR6T3KRmSzx6ym460R5QnqAL6i__DeUm3onCOXVcj725h318H3GAI9o27w7zGBC3cnMySyfu7lpu4xVvEb_fGipWiLiXYLrzN5tck7eufdy4Ee2Q2SM55IN8nLVzbsiCOJcA4oYnDqim_7qceZTxceLBMFeN5Qj_OYQalgX7ZjHz_kNTU5AkzNxn2ylwcmFZ20ixLUo51-zxWTHAcB25REHqPZwTvup_-TRBTFeoDO4n2o49n5WpZjHrb6hOAfqWNBdscayr6UW_Q0O-RzKXYGWrhZCAUpUT5zVKQYkH6ZCxuPCvI4tiRzArdUPVATuPrOqfUZHiH2Xr1Z0vYdR0SzGj2PoKX2RKbjfC71mMrLZyksDghqnZWZNOyg8c9GiDDO5iEkhh-7pjWBQdk_Dp--r7orlUEeXvhqoKPt4EFwj-N-kUgWrMYj-C9AAdNcfeD-tEGqxQTN8ZkczLR-fX9-yqNCF3Eb1Fd1QGTeqH_sh2C7fZ1BUum-f450yBpLlrsYP0kJb_K0ziDwLv-TzWGtuMbCIQ8wGv4g3PjCvyIZUOuk57lNqcQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/get-user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"get-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Articles List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiMWEzYjRiMmYzM2E3OGI0OTFlODNjY2FlZmQxODhlZmE2ZWQ4YzYyOTVlMDQyZjdlZmUzNjU4MmRlZTJmMzA4YWExNTM5M2FkODVkMjA3MDIiLCJpYXQiOjE2ODAwMDI2MjMuMjE3Njk3LCJuYmYiOjE2ODAwMDI2MjMuMjE3NzAxLCJleHAiOjE3MTE2MjUwMjMuMjEzNTQxLCJzdWIiOiI5Iiwic2NvcGVzIjpbXX0.4V05hr359GUJ0TXkTlipkcmfJhEeMrulsLjqFFIQySiR3KrXm5lzE2kN3f7o-frYU8TefWKx_9xyjS4isV3tfJTGIWUF_YOpZK_oEulKSdDNG_Mkyu6bvRxUMwzn9En9V4hMi0Esu8sm003lKJTmvJRQex1mDr7oraVXGqjzGtI2nhUViFmLSkGP_HdRNTlYdrrlur8qiqed6q_HoByO3rEdANb9HfB4DcO7A37QH_BTeG6pcHjx1x7AX1CM1QxsmFa74CHw6XOgl_0wXNF403TuLRjdZArkGuZWqJAs1haizdBvVA6-mi779XHUo10o7UxRAi0vtstjjCME8Z0XnW_9lcEQZdOdj8DJc0tX2SotzzaIYwg6AnhKABGUuiiiMtuSGbpUw-Fflg3FJNqbRFoACGLUSO70GdGryNDjNoZWip6OsBm4HuO38shbAdK_ibngEk1CPIxMogeolJAZ4kcGx_AlSretobfYRttMkKudnwUhGgO3nuU2MqbIk24xJXIa9tgKKQ0AmLNxN0B71coezkgkRAhjhj3p2zv9CWOu-u8L0u5do_w_tJ3z5D_-kv1_oDfBx7OjWD2lNJLXeZXNqB0JosGH5NMSOe3ijtSkhl1PvzNz5cd8w7mey5IlwjSqmbCuEiM5v7N4zTDteo_1y5tWqDsq2gjClemwvQQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/articles/list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"articles",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Category List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiMWEzYjRiMmYzM2E3OGI0OTFlODNjY2FlZmQxODhlZmE2ZWQ4YzYyOTVlMDQyZjdlZmUzNjU4MmRlZTJmMzA4YWExNTM5M2FkODVkMjA3MDIiLCJpYXQiOjE2ODAwMDI2MjMuMjE3Njk3LCJuYmYiOjE2ODAwMDI2MjMuMjE3NzAxLCJleHAiOjE3MTE2MjUwMjMuMjEzNTQxLCJzdWIiOiI5Iiwic2NvcGVzIjpbXX0.4V05hr359GUJ0TXkTlipkcmfJhEeMrulsLjqFFIQySiR3KrXm5lzE2kN3f7o-frYU8TefWKx_9xyjS4isV3tfJTGIWUF_YOpZK_oEulKSdDNG_Mkyu6bvRxUMwzn9En9V4hMi0Esu8sm003lKJTmvJRQex1mDr7oraVXGqjzGtI2nhUViFmLSkGP_HdRNTlYdrrlur8qiqed6q_HoByO3rEdANb9HfB4DcO7A37QH_BTeG6pcHjx1x7AX1CM1QxsmFa74CHw6XOgl_0wXNF403TuLRjdZArkGuZWqJAs1haizdBvVA6-mi779XHUo10o7UxRAi0vtstjjCME8Z0XnW_9lcEQZdOdj8DJc0tX2SotzzaIYwg6AnhKABGUuiiiMtuSGbpUw-Fflg3FJNqbRFoACGLUSO70GdGryNDjNoZWip6OsBm4HuO38shbAdK_ibngEk1CPIxMogeolJAZ4kcGx_AlSretobfYRttMkKudnwUhGgO3nuU2MqbIk24xJXIa9tgKKQ0AmLNxN0B71coezkgkRAhjhj3p2zv9CWOu-u8L0u5do_w_tJ3z5D_-kv1_oDfBx7OjWD2lNJLXeZXNqB0JosGH5NMSOe3ijtSkhl1PvzNz5cd8w7mey5IlwjSqmbCuEiM5v7N4zTDteo_1y5tWqDsq2gjClemwvQQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/articles/categorylist",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"articles",
+						"categorylist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Source List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiMWEzYjRiMmYzM2E3OGI0OTFlODNjY2FlZmQxODhlZmE2ZWQ4YzYyOTVlMDQyZjdlZmUzNjU4MmRlZTJmMzA4YWExNTM5M2FkODVkMjA3MDIiLCJpYXQiOjE2ODAwMDI2MjMuMjE3Njk3LCJuYmYiOjE2ODAwMDI2MjMuMjE3NzAxLCJleHAiOjE3MTE2MjUwMjMuMjEzNTQxLCJzdWIiOiI5Iiwic2NvcGVzIjpbXX0.4V05hr359GUJ0TXkTlipkcmfJhEeMrulsLjqFFIQySiR3KrXm5lzE2kN3f7o-frYU8TefWKx_9xyjS4isV3tfJTGIWUF_YOpZK_oEulKSdDNG_Mkyu6bvRxUMwzn9En9V4hMi0Esu8sm003lKJTmvJRQex1mDr7oraVXGqjzGtI2nhUViFmLSkGP_HdRNTlYdrrlur8qiqed6q_HoByO3rEdANb9HfB4DcO7A37QH_BTeG6pcHjx1x7AX1CM1QxsmFa74CHw6XOgl_0wXNF403TuLRjdZArkGuZWqJAs1haizdBvVA6-mi779XHUo10o7UxRAi0vtstjjCME8Z0XnW_9lcEQZdOdj8DJc0tX2SotzzaIYwg6AnhKABGUuiiiMtuSGbpUw-Fflg3FJNqbRFoACGLUSO70GdGryNDjNoZWip6OsBm4HuO38shbAdK_ibngEk1CPIxMogeolJAZ4kcGx_AlSretobfYRttMkKudnwUhGgO3nuU2MqbIk24xJXIa9tgKKQ0AmLNxN0B71coezkgkRAhjhj3p2zv9CWOu-u8L0u5do_w_tJ3z5D_-kv1_oDfBx7OjWD2lNJLXeZXNqB0JosGH5NMSOe3ijtSkhl1PvzNz5cd8w7mey5IlwjSqmbCuEiM5v7N4zTDteo_1y5tWqDsq2gjClemwvQQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "First article Title",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "First article Body",
+							"type": "text"
+						},
+						{
+							"key": "category_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "source_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/articles/sourcelist",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"articles",
+						"sourcelist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authors List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiMWEzYjRiMmYzM2E3OGI0OTFlODNjY2FlZmQxODhlZmE2ZWQ4YzYyOTVlMDQyZjdlZmUzNjU4MmRlZTJmMzA4YWExNTM5M2FkODVkMjA3MDIiLCJpYXQiOjE2ODAwMDI2MjMuMjE3Njk3LCJuYmYiOjE2ODAwMDI2MjMuMjE3NzAxLCJleHAiOjE3MTE2MjUwMjMuMjEzNTQxLCJzdWIiOiI5Iiwic2NvcGVzIjpbXX0.4V05hr359GUJ0TXkTlipkcmfJhEeMrulsLjqFFIQySiR3KrXm5lzE2kN3f7o-frYU8TefWKx_9xyjS4isV3tfJTGIWUF_YOpZK_oEulKSdDNG_Mkyu6bvRxUMwzn9En9V4hMi0Esu8sm003lKJTmvJRQex1mDr7oraVXGqjzGtI2nhUViFmLSkGP_HdRNTlYdrrlur8qiqed6q_HoByO3rEdANb9HfB4DcO7A37QH_BTeG6pcHjx1x7AX1CM1QxsmFa74CHw6XOgl_0wXNF403TuLRjdZArkGuZWqJAs1haizdBvVA6-mi779XHUo10o7UxRAi0vtstjjCME8Z0XnW_9lcEQZdOdj8DJc0tX2SotzzaIYwg6AnhKABGUuiiiMtuSGbpUw-Fflg3FJNqbRFoACGLUSO70GdGryNDjNoZWip6OsBm4HuO38shbAdK_ibngEk1CPIxMogeolJAZ4kcGx_AlSretobfYRttMkKudnwUhGgO3nuU2MqbIk24xJXIa9tgKKQ0AmLNxN0B71coezkgkRAhjhj3p2zv9CWOu-u8L0u5do_w_tJ3z5D_-kv1_oDfBx7OjWD2lNJLXeZXNqB0JosGH5NMSOe3ijtSkhl1PvzNz5cd8w7mey5IlwjSqmbCuEiM5v7N4zTDteo_1y5tWqDsq2gjClemwvQQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/articles/authorslist",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"articles",
+						"authorslist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fav Category",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiMTY3YzE3ZjE3NTEwYzRjMmE4N2VmOWU3YTA1MzUwYWVjMWE5MzdkYjMwYjdiYjNmZTQ0MmNkZDYzMzhjOWY1NDc3MjExZjk2NjFhMzBlZTYiLCJpYXQiOjE2ODAxNzgyNjAuODQyODIsIm5iZiI6MTY4MDE3ODI2MC44NDI4MjksImV4cCI6MTcxMTgwMDY2MC44MzU2MjIsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.Gve3CpIStTj_-IJ_BqbheHlKrgYFkNsgShZ1tgYixaXxiaiYGNWbBiMHomc25gq-lHtkVcr4tJbKclGkHhba-49IDgL3BU_XDmuxH6WQjY9P5uZ-rVIESpCNzXShdtPYVXEqi1ZUmBgqpEbyPC8CNZsyNhvy-p3LjwgdAS4SrGfpmfgxAvUyBCoW5l9GFogNok73yxZ6MG_aagYVFc4TWXBNdTMrozf2RpIzHrnD1_mkt6cpljt0_9tSXEysDXo_bT0jRHOHAgn1rhHNw_RzDJnisKrg1-nnfN8WGTRB_MOM8Th_rxEQeO9WCNvKVV4P3QbQgEJpH-beCfPgV5kWUhbiZC5l2XgfT5rUuPP0LtoWrQsKDGP302k4_WwNHQW1GCoz0Q_-d54U9IpQGpXPgYnUTcHudikYQZbhkfyo0MSFU5pnF4CkvtF1GBTLTTkey0eozbAGQGZddZeqTU_Z2Y0U-dAxSiC2L-DeLM3hr0ivS1ZVTy5Wi7u7ptKjzte9q1P2IlhjKfz_V-Uw9TYd_sZYG6yKoz0sAcJ67oyB_4y6lRkwwZ8KmqK9P1KsNR0rx53KMwcSuCxgp5J7_elDtbsy0Namm-25jOzO4X_PAJYUj8rkGxtvyPmNXmQZ1IYuuWjcWpup65PCKSMegOOJ7CWH7KgKOHcIf70J7RWNbYQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "is_fav",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "category_id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/articles/fav_categories",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"articles",
+						"fav_categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fav Source",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiMTY3YzE3ZjE3NTEwYzRjMmE4N2VmOWU3YTA1MzUwYWVjMWE5MzdkYjMwYjdiYjNmZTQ0MmNkZDYzMzhjOWY1NDc3MjExZjk2NjFhMzBlZTYiLCJpYXQiOjE2ODAxNzgyNjAuODQyODIsIm5iZiI6MTY4MDE3ODI2MC44NDI4MjksImV4cCI6MTcxMTgwMDY2MC44MzU2MjIsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.Gve3CpIStTj_-IJ_BqbheHlKrgYFkNsgShZ1tgYixaXxiaiYGNWbBiMHomc25gq-lHtkVcr4tJbKclGkHhba-49IDgL3BU_XDmuxH6WQjY9P5uZ-rVIESpCNzXShdtPYVXEqi1ZUmBgqpEbyPC8CNZsyNhvy-p3LjwgdAS4SrGfpmfgxAvUyBCoW5l9GFogNok73yxZ6MG_aagYVFc4TWXBNdTMrozf2RpIzHrnD1_mkt6cpljt0_9tSXEysDXo_bT0jRHOHAgn1rhHNw_RzDJnisKrg1-nnfN8WGTRB_MOM8Th_rxEQeO9WCNvKVV4P3QbQgEJpH-beCfPgV5kWUhbiZC5l2XgfT5rUuPP0LtoWrQsKDGP302k4_WwNHQW1GCoz0Q_-d54U9IpQGpXPgYnUTcHudikYQZbhkfyo0MSFU5pnF4CkvtF1GBTLTTkey0eozbAGQGZddZeqTU_Z2Y0U-dAxSiC2L-DeLM3hr0ivS1ZVTy5Wi7u7ptKjzte9q1P2IlhjKfz_V-Uw9TYd_sZYG6yKoz0sAcJ67oyB_4y6lRkwwZ8KmqK9P1KsNR0rx53KMwcSuCxgp5J7_elDtbsy0Namm-25jOzO4X_PAJYUj8rkGxtvyPmNXmQZ1IYuuWjcWpup65PCKSMegOOJ7CWH7KgKOHcIf70J7RWNbYQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "is_fav",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "source_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/articles/fav_sources",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"articles",
+						"fav_sources"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fav Authors",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjgwMjcxOTY5LCJleHAiOjE2ODAyNzU1NjksIm5iZiI6MTY4MDI3MTk2OSwianRpIjoiYk1mNVpnUEFqTjRqUE8wOCIsInN1YiI6IjExIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.oIrBGQ8-yBXHtwUcZcHt6f5VV3EqM40F2mL01yrNEf8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "is_fav",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "Patrick Sisson",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/articles/fav_authors",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"articles",
+						"fav_authors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fav Articles List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiOTJkYTBlODY4NTBjYWI3NTNiMTllMzQ1YTk2OWE3MzhlZDc2MzAxOTI5MDYyNmJmOThkNTAxOGJjMGY2ZjRjZWRiMmViZjQ2OTEwYzhiNGUiLCJpYXQiOjE2ODAyNTk2MjguMDI2NTUzLCJuYmYiOjE2ODAyNTk2MjguMDI2NTU2LCJleHAiOjE3MTE4ODIwMjguMDIyOTM0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.wKwWQk-DiKzGD01HLF47PLYBijG6NqzSTvoFqxfRA124b_hi47vt4VkcGg79xuA5b-AHstZSbSjntj0Rnl5Sd3_mgu2DxejtOeefo1Ev_nZgJlQy_8ZJrL78sN4nt6gIfC5HYC2_09k2eSPMPmM5v0DZzjlZTdHwIjS8CFc1iBNivwSnXLSAepnOVhvt0rdy1jwowfWZeL0Bn4s7dRHcowFtOpyoPY5HwZ3_GT7R3LzxW2GUA6tclRqPqO9dXo9xzdmiLQvrKu3ce0yl-GMkPdTUcACeTZEzaCRN_0IvVAv-UOvaYW9dpYouH2VWx6L8qeX-KA7y2DUWmYPzm0SkfcokFgrLVE0zzJ4S3u9B2FGYV2iKepz9H2kXRp778dCWzqNJFF-iSVjiWW3upWR2xyp5tpntdf2orMwrPx-B-Ss4pv8QnYWWtOndoqe4JKkjKMCru6VRP-A_rV3ykl3IvHTxcz3VS2dfOR1RPbhByMjXsmedD9SaV4aslilcAv23QsX4zNRpnVqs3noqxVBahsQJ5SRtwCzkK8ntPtDNMv5SG67Y0DBj5l6DHtHqQ-zqCuI9_isYWTI-rZqB3mgFvdV6qkp-cahnTu26nj8KrCR77ddGY2q2HAyZ1h-Ylz6_yX7rXWNGn2VhPZRQN6GhVX36kbY3y_KVIM2a6KkjBmU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/articles/fav_articles_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"articles",
+						"fav_articles_list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Articles By ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"First article Title\",\r\n    \"body\":\"First article Body\",\r\n    \"category_id\":\"1\",\r\n    \"source_id\":\"1\"\r\n   \r\n\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/articles/14",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"articles",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Articles Search",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "category_id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "source_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "date_from",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "date_to",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/articles/searchar",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"articles",
+						"searchar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Articles Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "First article Title",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "First article Body",
+							"type": "text"
+						},
+						{
+							"key": "category_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "source_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "urlToImage",
+							"value": "31stephens1-tmwg-articleLarge.jpg",
+							"type": "text"
+						},
+						{
+							"key": "url",
+							"value": "https://www.nytimes.com/2023/01/31/opinion/joe-biden-future-savior.html",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "Bret Stephens",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/articles/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"articles",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Articles Update By Id",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "First Title Update",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "First Body Update",
+							"type": "text"
+						},
+						{
+							"key": "category_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "source_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/articles/update/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"articles",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Articles By ID",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"First article Title\",\r\n    \"body\":\"First article Body\",\r\n    \"category_id\":\"1\",\r\n    \"source_id\":\"1\"\r\n   \r\n\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/articles/4",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"articles",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Articles Fetch From News APi",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/articles/fetch-from-news-api",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"articles",
+						"fetch-from-news-api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Articles Fetch From Newyork APi",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/articles/fetch-from-news-newyork-api",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"articles",
+						"fetch-from-news-newyork-api"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
